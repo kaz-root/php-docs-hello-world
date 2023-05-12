@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-    echo "Hello World!";
+    echo "Hello Azure!";
 
 //Initializes MySQLi
 $conn = mysqli_init();
@@ -13,7 +13,7 @@ $conn = mysqli_init();
 mysqli_real_connect($conn, 'testdb01-murayama.mysql.database.azure.com', 'mysqladmin', 'qaZXsw23edCVfr4', 'test_database', 3306, NULL, MYSQLI_CLIENT_SSL);
 
     // 接続結果の出力
-    if ($con->connect_error) {
+    if ($conn->connect_error) {
         echo "<h2>データベース接続NG</h2>";
     } else {
         echo "<h2>データベース接続OK</h2>";
