@@ -4,27 +4,24 @@
 </head>
 <body>
 <?php
-    echo "Hello DB!";
+    echo "Hello World!";
 
-$link = mysql_connect('testdb01-murayama.mysql.database.azure.com', 'mysqladmin', '1qaZXsw23edCVfr4');
-if (!$link) {
-    die('接続失敗です。'.mysql_error());
-}
+//Initializes MySQLi
+$conn = mysqli_init();
 
-print('<p>接続に成功しました。</p>');
+// Establish the connection
+mysqli_real_connect($conn, 'testdb01-murayama.mysql.database.azure.com', 'mysqladmin', '1qaZXsw23edCVfr4', 'test_database', 3306, NULL, MYSQLI_CLIENT_SSL);
 
-$db_selected = mysql_select_db('test_database', $link);
-if (!$db_selected){
-    die('データベース選択失敗です。'.mysql_error());
-}
+//If connection failed, show the error
+if (mysqli_connect_errno())
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+} else {
+      echo "<h2>データベース接続OK</h2>";
+    }
 
-print('<p>uriageデータベースを選択しました。</p>');
-
-$close_flag = mysql_close($link);
-
-if ($close_flag){
-    print('<p>切断に成功しました。</p>');
-}
+    // MySQL接続の終了
+    $conn->close();
 ?>
 </body>
 </html>
