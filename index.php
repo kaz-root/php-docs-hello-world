@@ -4,27 +4,28 @@
     <title>DB接続検証</title>
 </head>
 <body>
-    <?php
-    echo "Hello Azure!";
+<?php
+    echo "Hello DB!";
 
-    // MySQLサーバーの接続情報
-    $host = "testdb01-murayama.mysql.database.azure.com";
-    $username = "mysqladmin";
-    $password = "1qaZXsw23edCVfr4";
-    $dbname = "test_database";
+$link = mysql_connect('testdb01-murayama.mysql.database.azure.com', 'mysqladmin', '1qaZXsw23edCVfr4');
+if (!$link) {
+    die('接続失敗です。'.mysql_error());
+}
 
-    // MySQLサーバーへの接続
-    $mysqli = new mysqli($host, $username, $password, $dbname);
+print('<p>接続に成功しました。</p>');
 
-    // 接続結果の出力
-    if ($mysqli->connect_error) {
-        echo "<h2>データベース接続NG</h2>";
-    } else {
-        echo "<h2>データベース接続OK</h2>";
-    }
+$db_selected = mysql_select_db('test_database', $link);
+if (!$db_selected){
+    die('データベース選択失敗です。'.mysql_error());
+}
 
-    // MySQL接続の終了
-    $mysqli->close();
-    ?>
+print('<p>uriageデータベースを選択しました。</p>');
+
+$close_flag = mysql_close($link);
+
+if ($close_flag){
+    print('<p>切断に成功しました。</p>');
+}
+?>
 </body>
 </html>
