@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>データベース接続検証</title>
+    <title>DB接続検証</title>
 </head>
 <body>
 <?php
+
+echo "Hello World!";
+
 // MySQLサーバーの接続情報
 $host = "testdb01-murayama.mysql.database.azure.com";
 $username = "mysqladmin";
@@ -21,9 +24,6 @@ if ($mysqli->connect_error) {
 }
     // MySQL接続の終了
     $mysqli->close();
-
-    echo "Hello World!";
-
     ?>
 </body>
 </html>
