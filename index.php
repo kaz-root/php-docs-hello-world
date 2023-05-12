@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>DB接続検証</title>
