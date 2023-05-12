@@ -11,7 +11,7 @@ $username = "mysqladmin";
 $password = "1qaZXsw23edCVfr4";
 $dbname = "test_database";
 // MySQLサーバーへの接続
-    $mysqli = new mysqli($host, $username, $password, $dbname);
+$mysqli = new mysqli($host, $username, $password, $dbname);
 // 接続エラーの確認
 if ($mysqli->connect_error) {
     http_response_code(500);
@@ -21,6 +21,9 @@ if ($mysqli->connect_error) {
 }
     // MySQL接続の終了
     $mysqli->close();
+
+    echo "Hello World!";
+
     ?>
 </body>
 </html>
