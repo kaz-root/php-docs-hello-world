@@ -10,7 +10,7 @@
 $conn = mysqli_init();
 
 // Establish the connection
-mysqli_real_connect($conn, 'testdb01-murayama.mysql.database.azure.com', 'mysqladmin', '1qaZXsw23edCVfr4', 3306, NULL, MYSQLI_CLIENT_SSL);
+mysqli_real_connect($conn, 'testdb01-murayama.mysql.database.azure.com', 'mysqladmin', '1qaZXsw23edCVfr4', 'test_database', 3306, NULL, MYSQLI_CLIENT_SSL);
 
     // 接続結果の出力
     if ($conn->connect_error) {
