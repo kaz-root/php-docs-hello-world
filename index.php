@@ -17,7 +17,7 @@ mysqli_real_connect($conn, 'testdb01-murayama.mysql.database.azure.com', 'mysqla
         die('Failed to connect to MySQL: '.mysqli_connect_error());
         echo "<h2>データベース接続NG</h2>";
     } else {
-        echo "<h2>データベース接続OK</h2>";
+        echo "<h2>'test_database'データベース接続OK</h2>";
     }
 
 
