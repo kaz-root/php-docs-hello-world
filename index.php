@@ -4,13 +4,13 @@
 </head>
 <body>
 <?php
-    echo "Hello World!";
+    echo "Hello World2!";
 
 //Initializes MySQLi
 $conn = mysqli_init();
 
 // Establish the connection
-mysqli_real_connect($conn, 'singledb01-murayama.mysql.database.azure.com', 'mysqladmin@singledb01-murayama', '1qaZXsw23edCVfr4', 'database01', 3306);
+mysqli_real_connect($conn, 'singledb02-murayama.mysql.database.azure.com', 'mysqladmin@singledb02-murayama', '1qaZXsw23edCVfr4', 'database01', 3306);
 
     // 接続結果の出力
     if ($conn->connect_error) {
