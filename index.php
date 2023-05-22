@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-    echo "Hello World2!";
+    echo "Hello World!";
 
 //Initializes MySQLi
 $conn = mysqli_init();
